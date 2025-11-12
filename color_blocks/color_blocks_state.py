@@ -22,7 +22,8 @@ class color_blocks_state:
 
     @staticmethod
     def is_goal_state(_color_blocks_state):
-        return 
+        global global_goal_state
+        return global_goal_state == _color_blocks_state
 
     def get_neighbors(self):
         pass
@@ -38,7 +39,9 @@ class color_blocks_state:
     def get_state_str(self):
         pass
 
-    @override
+    def __hash__(self):
+        return self.state_array.__hash__()
+
     def __eq__(self, other):
         return self.state_array == other.state_array
 
