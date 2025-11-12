@@ -1,18 +1,24 @@
 import numpy as np
 from numpy.typing import NDArray
 
-global_goal_state : NDArray[np.float64] | None = None
+global_goal_state : NDArray[np.float32] = np.array([])
 
 def init_goal_for_search(goal_blocks: str) -> None:
     global global_goal_state
     global_goal_state = np.array(goal_blocks.split(','))
 
-class color_blocks_state:
-    self.state_array : NDArray[tuple[np.float64, np.float64]] | None = None
 
-    def __init__(self, blocks_str, **kwargs):
-        # you can use the init function for several purposes
-        pass
+def parse_state_to_ndarray(blocks_str: str) -> NDArray[np.float32]:
+    return np.array([])
+    
+
+class color_blocks_state:
+    def __init__(self, blocks_str: str, g: np.float32=np.float32(0), h: np.float32=np.float32(0)):
+        self.state_array : NDArray[np.float32] = parse_state_to_ndarray(blocks_str)
+        self.g : np.float32 = g
+        self.h : np.float32 = h
+        self.f : np.float32 = g + h
+        
 
     @staticmethod
     def is_goal_state(_color_blocks_state):
