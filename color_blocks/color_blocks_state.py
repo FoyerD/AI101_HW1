@@ -1,9 +1,12 @@
+import numpy as np
 
-def init_goal_for_search(goal_blocks):
-    pass
+global_goal_state : np.ndarray | None = None
+
+def init_goal_for_search(goal_blocks: str) -> None:
+    global gl
 
 class color_blocks_state:
-    # you can add global params
+    self.state_array : 
 
     def __init__(self, blocks_str, **kwargs):
         # you can use the init function for several purposes
