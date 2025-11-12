@@ -9,15 +9,16 @@ def init_goal_for_search(goal_blocks: str) -> None:
 
 
 def parse_state_to_ndarray(blocks_str: str) -> NDArray[np.int32]:
+    #!TODO complete
     return np.array([])
     
 
 class color_blocks_state:
-    def __init__(self, blocks_str: str, g: np.int32=np.int32(0), h: np.int32=np.int32(0)):
+    def __init__(self, blocks_str: str, g: float=0, h: float=0):
         self.state_array : NDArray[np.int32] = parse_state_to_ndarray(blocks_str)
-        self.g : np.int32 = g
-        self.h : np.int32 = h
-        self.f : np.int32 = g + h
+        self.g : float = g
+        self.h : float = h
+        self.f : float = g + h
         
 
     @staticmethod
@@ -26,6 +27,7 @@ class color_blocks_state:
         return global_goal_state == _color_blocks_state
 
     def get_neighbors(self):
+        #!TODO complete
         pass
 
         # you can change the body of the function if you want
@@ -37,6 +39,7 @@ class color_blocks_state:
 
     # for debugging states
     def get_state_str(self):
+        #!TODO complete
         pass
 
     def __hash__(self):
